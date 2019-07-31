@@ -12,8 +12,18 @@
     "persian Number",
     "Number to String"
   ],
-  "author": "Farzad Shami",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FaRzad-845/iramount.git"
+  },
+  "author": {
+    "name": "farzadshami",
+    "url": "https://github.com/FaRzad-845"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FaRzad-845/iramount/issues"
+  },
   "devDependencies": {
     "jest": "^24.8.0"
   }

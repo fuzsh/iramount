@@ -22,8 +22,8 @@ class Iramount {
   farsiSpokenFormat() {
     const groups = this.digitGrouped().split(",");
     return groups
-      .map(group => parseInt(group))
-      .map((number, index) => {
+      .map((group, index) => {
+        let number = parseInt(group);
         let farsiRep = "";
         if (number !== 0 && index !== 0) farsiRep += " و ";
         farsiRep += formatFragment(number);

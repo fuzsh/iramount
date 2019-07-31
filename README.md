@@ -14,6 +14,7 @@ const irAmount = require("iramount");
 const amount = irAmount(10239876); // constructor just accepts number 
 ```
 
+### Grouping Digits
 To group digits by three, use
 ```javascript
 const withDigitGrouping = amount.digitGrouped(); // returns 10,239,876
@@ -44,6 +45,8 @@ or
 ```javascript
 const withDigitGrouping = amount.digitGrouped("T", "Fa", 2); // returns ۱,۰۲,۳۹,۸۷.۶
 ```
+
+### Convert To Text
 
 To display Farsi spoken format in Rials (IRR), use
 ```javascript

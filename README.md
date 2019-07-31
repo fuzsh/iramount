@@ -1,13 +1,13 @@
-#number to persian text converter
+# number to persian text converter
 This NodeJs library enables you to create formal Farsi spoken format for numbers that represent an amount in Rials (IRR).
 
-##install
+## install
 using npm :
 
 ```javascript
 $ npm install iramount --save
 ```
-##Usage
+## Usage
 
 ```javascript
 const irAmount = require("iramount"); 
@@ -54,7 +54,7 @@ To display Farsi spoken format in Tomans (Toman), use
 const tomanFormat = amount.farsiFormatToman(); // returns یک میلیون و بیست و سه هزار و نهصد و هشتاد و هفت تومان و شش ریال
 ```
 
-##special thanks :
+## special thanks :
 
 <ul>
   <li>

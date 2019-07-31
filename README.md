@@ -11,7 +11,7 @@ $ npm install iramount --save
 
 ```javascript
 const irAmount = require("iramount"); 
-const amount = irAmount(10239876); // constructor just accepts number 
+const amount = new irAmount(10239876); // constructor just accepts number 
 ```
 
 ### Grouping Digits

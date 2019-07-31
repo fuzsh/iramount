@@ -2,7 +2,7 @@
   "name": "iramount",
   "version": "1.0.0",
   "description": "enables you to create formal Farsi spoken format for numbers that represent an amount",
-  "main": "index.js",
+  "main": "lib.js",
   "scripts": {
     "test": "jest"
   },

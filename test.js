@@ -1,3 +1,3 @@
 const irAmount = require("./lib");
-const amount = new irAmount(125555);
-console.log(amount.digitGrouped("R", "fa"));
+const amount = new irAmount(10239876);
+console.log(amount.digitGrouped());

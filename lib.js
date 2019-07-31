@@ -1,4 +1,4 @@
-const { thousandMultiples } = require("./numberToString");
+const { oneToTwenty, thousandMultiples } = require("./numberToString");
 const persianNumbers = require("./functions/utils");
 const formatFragment = require("./functions/formatFragment");
 
@@ -22,14 +22,18 @@ class Iramount {
     groupDigitBy = 3,
     amount = this.amount
   ) {
-    if (formatType === "R" && language.toLowerCase() === "en")
+    if (typeof amount !== "number")
+      return new Error(
+        `param ${amount} type is ${typeof amount}; it should be number`
+      );
+    if (formatType.toLowerCase() === "r" && language.toLowerCase() === "en")
       return amount.format(0, groupDigitBy);
-    if (formatType === "T" && language.toLowerCase() === "en")
+    if (formatType.toLowerCase() === "t" && language.toLowerCase() === "en")
       return (amount / 10).format(1, groupDigitBy);
 
-    if (formatType === "R" && language.toLowerCase() === "fa")
+    if (formatType.toLowerCase() === "r" && language.toLowerCase() === "fa")
       return persianNumbers(amount.format(0, groupDigitBy));
-    if (formatType === "T" && language.toLowerCase() === "fa")
+    if (formatType.toLowerCase() === "t" && language.toLowerCase() === "fa")
       return persianNumbers((amount / 10).format(1, groupDigitBy));
 
     return new Error(
@@ -38,7 +42,9 @@ class Iramount {
   }
 
   farsiFormat(amount = this.amount) {
-    const groups = this.digitGrouped(amount).split(",");
+    const groups = this.digitGrouped(undefined, undefined, 3, amount).split(
+      ","
+    );
     return groups
       .map((group, index) => {
         let number = parseInt(group);
@@ -53,16 +59,17 @@ class Iramount {
       .trim();
   }
 
-  farsiFormatRial(amount = this.amount) {
-    return this.farsiFormat(amount) + " ریال";
+  farsiFormatRial() {
+    return this.farsiFormat(this.amount) + " ریال";
   }
 
-  farsiFormatToman(amount = this.amount) {
-    const tomanFormat = this.farsiFormat(Math.floor(amount / 10)) + " تومان";
-    const remOfTen = amount % 10;
+  farsiFormatToman() {
+    const tomanFormat =
+      this.farsiFormat(Math.floor(this.amount / 10)) + " تومان";
+    const remOfTen = this.amount % 10;
     return remOfTen === 0
       ? tomanFormat
-      : tomanFormat + " و " + this.farsiFormatRial(remOfTen);
+      : tomanFormat + " و " + oneToTwenty[remOfTen] + " ریال";
   }
 }
 

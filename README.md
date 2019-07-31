@@ -18,10 +18,40 @@ To group digits by three, use
 ```javascript
 const withDigitGrouping = amount.digitGrouped(); // returns 10,239,876
 ```
+params : 
+
+<ul>
+  <li>
+   formatType | default = "R" | R = Rial and T = Toman
+  </li>
+  <li>
+   language | default = "EN" | EN = English and Fa = Farsi
+  </li>
+  <li>
+   groupDigitBy | default = 3
+  </li>
+  <li>
+   amount | constructor value
+  </li>
+</ul>
+
+for Ex :
+
+```javascript
+const withDigitGrouping = amount.digitGrouped("R", "Fa"); // returns ۱۰,۲۳۹,۸۷۶
+```
+or 
+```javascript
+const withDigitGrouping = amount.digitGrouped("T", "Fa", 2); // returns ۱,۰۲,۳۹,۸۷.۶
+```
 
 To display Farsi spoken format in Rials (IRR), use
 ```javascript
-const rialFormat = amount.farsiFormatToman(); // returns ده میلیون و دویست و سی و نه هزار و هشتصد و هفتاد و شش
+const rialFormat = amount.farsiFormatRial(); // returns ده میلیون و دویست و سی و نه هزار و هشتصد و هفتاد و شش ریال
+```
+To display Farsi spoken format in Tomans (Toman), use
+```javascript
+const tomanFormat = amount.farsiFormatToman(); // returns یک میلیون و بیست و سه هزار و نهصد و هشتاد و هفت تومان و شش ریال
 ```
 
 ##special thanks :

@@ -1,34 +1,30 @@
-<h1 dir="rtl">تبدیل عدد به متن</h1>
-<p dir="rtl">
-یک ماژول برای تبدیل اعداد به متن فارسی 
-</p>
+#number to persian text converter
+This library enables you to create formal Farsi spoken format for numbers that represent an amount in Rials (IRR).
 
-<h3 dir="rtl">نصب</h3>
-<p dir="rtl">با استفاده از npm</p>
+##install
+using npm :
 
 ```javascript
 $ npm install iramount --save
 ```
-<h3 dir="rtl">استفاده</h3>
+##Usage
 
 ```javascript
 const irAmount = require("iramount"); 
 const amount = irAmount(10239876); // constructor just accepts number 
 ```
 
-<p dir="rtl">برای دریافت عدد به صورت فرمت بندی شده </p>
-
+To group digits by three, use
 ```javascript
 const withDigitGrouping = amount.digitGrouped(); // returns 10,239,876
 ```
 
-<p dir="rtl">برای دریافت عدد به صورت متن </p>
-
-```bash
+To display Farsi spoken format in Rials (IRR), use
+```javascript
 const withDigitGrouping = amount.farsiFormatToman(); // returns ده میلیون و دویست و سی و نه هزار و هشتصد و هفتاد و شش
 ```
 
-<h2 dir="rtl">باتشکر</h2>
+##special thanks :
 
 <ul>
   <li>
@@ -36,9 +32,3 @@ const withDigitGrouping = amount.farsiFormatToman(); // returns ده میلیو�
   </li>
 </ul>
 
-
-<h2 dir="rtl">مجوز</h2>
-
-<p dir="rtl">
-  
-</p>

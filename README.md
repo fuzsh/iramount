@@ -1,5 +1,5 @@
 #number to persian text converter
-This library enables you to create formal Farsi spoken format for numbers that represent an amount in Rials (IRR).
+This NodeJs library enables you to create formal Farsi spoken format for numbers that represent an amount in Rials (IRR).
 
 ##install
 using npm :
@@ -21,7 +21,7 @@ const withDigitGrouping = amount.digitGrouped(); // returns 10,239,876
 
 To display Farsi spoken format in Rials (IRR), use
 ```javascript
-const withDigitGrouping = amount.farsiFormatToman(); // returns ده میلیون و دویست و سی و نه هزار و هشتصد و هفتاد و شش
+const rialFormat = amount.farsiFormatToman(); // returns ده میلیون و دویست و سی و نه هزار و هشتصد و هفتاد و شش
 ```
 
 ##special thanks :

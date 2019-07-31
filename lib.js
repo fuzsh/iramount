@@ -1,4 +1,5 @@
 const { thousandMultiples } = require("./numberToString");
+const persianNumbers = require("./functions/utils");
 const formatFragment = require("./functions/formatFragment");
 
 Number.prototype.format = function(n, x) {
@@ -15,12 +16,29 @@ class Iramount {
     this.amount = amount;
   }
 
-  digitGrouped() {
-    return this.amount.format();
+  digitGrouped(
+    formatType = "R",
+    language = "En",
+    groupDigitBy = 3,
+    amount = this.amount
+  ) {
+    if (formatType === "R" && language.toLowerCase() === "en")
+      return amount.format(0, groupDigitBy);
+    if (formatType === "T" && language.toLowerCase() === "en")
+      return (amount / 10).format(1, groupDigitBy);
+
+    if (formatType === "R" && language.toLowerCase() === "fa")
+      return persianNumbers(amount.format(0, groupDigitBy));
+    if (formatType === "T" && language.toLowerCase() === "fa")
+      return persianNumbers((amount / 10).format(1, groupDigitBy));
+
+    return new Error(
+      `FormatType shuld be R for rial || T for toman. You entered ${formatType} && language sholud be fa || en. You entered ${language}`
+    );
   }
 
-  farsiSpokenFormat() {
-    const groups = this.digitGrouped().split(",");
+  farsiFormat(amount = this.amount) {
+    const groups = this.digitGrouped(amount).split(",");
     return groups
       .map((group, index) => {
         let number = parseInt(group);
@@ -33,6 +51,18 @@ class Iramount {
       })
       .join("")
       .trim();
+  }
+
+  farsiFormatRial(amount = this.amount) {
+    return this.farsiFormat(amount) + " ریال";
+  }
+
+  farsiFormatToman(amount = this.amount) {
+    const tomanFormat = this.farsiFormat(Math.floor(amount / 10)) + " تومان";
+    const remOfTen = amount % 10;
+    return remOfTen === 0
+      ? tomanFormat
+      : tomanFormat + " و " + this.farsiFormatRial(remOfTen);
   }
 }
 

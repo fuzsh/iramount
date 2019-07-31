@@ -63,11 +63,11 @@ class Iramount {
     return this.farsiFormat(this.amount) + " ریال";
   }
 
-  farsiFormatToman(showRial = false) {
+  farsiFormatToman() {
     const tomanFormat =
       this.farsiFormat(Math.floor(this.amount / 10)) + " تومان";
     const remOfTen = this.amount % 10;
-    return remOfTen === 0 || showRial === false
+    return remOfTen === 0
       ? tomanFormat
       : tomanFormat + " و " + oneToTwenty[remOfTen] + " ریال";
   }

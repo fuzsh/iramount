@@ -54,7 +54,8 @@ const rialFormat = amount.farsiFormatRial(); // returns ده میلیون و د�
 ```
 To display Farsi spoken format in Tomans (Toman), use
 ```javascript
-const tomanFormat = amount.farsiFormatToman(); // returns یک میلیون و بیست و سه هزار و نهصد و هشتاد و هفت تومان و شش ریال
+const tomanFormat = amount.farsiFormatToman(); // returns یک میلیون و بیست و سه هزار و نهصد و هشتاد و هفت تومان
+const tomanFormat = amount.farsiFormatToman(true); // returns یک میلیون و بیست و سه هزار و نهصد و هشتاد و هفت تومان و شش ریال
 ```
 
 ## special thanks :

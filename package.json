@@ -1,0 +1,20 @@
+{
+  "name": "iramount",
+  "version": "1.0.0",
+  "description": "enables you to create formal Farsi spoken format for numbers that represent an amount",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "node.js",
+    "persian",
+    "persian Number",
+    "Number to String"
+  ],
+  "author": "Farzad Shami",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}

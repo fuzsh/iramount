@@ -63,7 +63,10 @@ class Iramount {
     return this.farsiFormat(this.amount) + " ریال";
   }
 
-  farsiFormatToman(showRial = false) {
+  farsiFormatToman(options = {}) {
+    const { showRial = false } = options;
+    if (typeof showRial !== "boolean")
+      return new Error("Invalid value for showRial");
     const tomanFormat =
       this.farsiFormat(Math.floor(this.amount / 10)) + " تومان";
     const remOfTen = this.amount % 10;
